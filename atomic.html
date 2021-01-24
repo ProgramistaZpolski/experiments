@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Sub-Atomic CSS</title>
+	<style>
+		body {
+			display: none;
+			margin: 0px;
+		}
+
+		address,
+		article,
+		aside,
+		blockquote,
+		body,
+		caption,
+		center,
+		col,
+		colgroup,
+		dd,
+		dir,
+		div,
+		dl,
+		dt,
+		fieldset,
+		figcaption,
+		figure,
+		footer,
+		form,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		header,
+		hgroup,
+		hr,
+		html,
+		legend,
+		li,
+		listing,
+		main,
+		marquee,
+		menu,
+		nav,
+		noframes,
+		ol,
+		p,
+		plaintext,
+		pre,
+		section,
+		summary,
+		table,
+		tbody,
+		td,
+		tfoot,
+		th,
+		thead,
+		tr,
+		ul,
+		xmp {
+			unicode-bidi: embed;
+		}
+
+		h1 {
+			display: none;
+			font-size: 0em;
+			font-weight: 100;
+			margin-block-start: 0em;
+			margin-block-end: 0em;
+		}
+
+		*|*:any-link:not(svg|a) {
+			text-decoration: none;
+		}
+
+		*|*:link {
+			color: rgb(255, 255, 255);
+		}
+
+		:any-link {
+			cursor: none;
+		}
+	</style>
+	<style>
+		.display-block {
+			display: block;
+		}
+
+		.unicode-bidi-isolate {
+			unicode-bidi: isolate;
+		}
+
+		.font-size-2em {
+			font-size: 2em;
+		}
+
+		.font-weight-bold {
+			font-weight: bold;
+		}
+
+		.margin-block-start-67em {
+			margin-block-start: .67em;
+		}
+
+		.margin-block-end-67em {
+			margin-block-end: .67em;
+		}
+
+		.margin-8px {
+			margin: 8px;
+		}
+
+		.font-apple-system-BlinkMacSystemFont-Segoe-UI-Roboto-Oxygen-Ubuntu-Cantarell-Open-Sans-Helvetica-Neue-sans-serif {
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		}
+
+		.cursor-pointer {
+			cursor: pointer;
+		}
+
+		.color-rgb-0-0-238 {
+			color: rgb(0, 0, 238);
+		}
+
+		.text-decoration-underline {
+			text-decoration: underline;
+		}
+
+		.color-white {
+			color: white;
+		}
+
+		.background-color-0d6efd {
+			background-color: #0d6efd;
+		}
+
+		.border-color-0d6efd {
+			border-color: #0d6efd;
+		}
+
+		.display-inline-block {
+			display: inline-block;
+		}
+
+		.font-weight-400 {
+			font-weight: 400;
+		}
+
+		.line-height-15 {
+			line-height: 1.5;
+		}
+
+		.text-align-center {
+			text-align: center;
+		}
+
+		.text-decoration-none {
+			text-decoration: none;
+		}
+
+		.vertical-align-middle {
+			vertical-align: middle;
+		}
+
+		.user-select-none {
+			user-select: none;
+		}
+
+		.border-1px-solid {
+			border: 1px solid;
+		}
+
+		.padding-375rem-75rem {
+			padding: .375rem .75rem;
+		}
+
+		.font-size-1rem {
+			font-size: 1rem;
+		}
+
+		.border-radius-25rem {
+			border-radius: .25rem;
+		}
+
+		.transition-color-15s-ease-in-out-background-color-15s-ease-in-out-border-color-15s-ease-in-out-box-shadow-15s-ease-in-out {
+			transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+		}
+
+		.webkit-apperance-button {
+			-webkit-appearance: button;
+		}
+
+		.text-transform-none {
+			text-transform: none;
+		}
+
+		.margin-0 {
+			margin: 0;
+		}
+
+		.font-family-inherit {
+			font-family: inherit;
+		}
+
+		.white-space-unset {
+			white-space: unset;
+		}
+
+		.text-indent-0 {
+			text-indent: 0;
+		}
+
+		.padding-block-0 {
+			padding-block: 0;
+		}
+
+		.padding-inline-8px {
+			padding-inline: 8px;
+		}
+
+		.text-shadow-initial {
+			text-shadow: initial;
+		}
+
+		.word-spacing-initial {
+			word-spacing: initial;
+		}
+
+		.letter-spacing-initial {
+			letter-spacing: initial;
+		}
+
+		.background-color-0b5ed7-hover:hover {
+			background-color: #0b5ed7;
+		}
+
+		.border-color-0a58ca-hover:hover {
+			border-color: #0a58ca;
+		}
+
+		.background-attachment-unset {
+			background-attachment: unset;
+		}
+
+		.background-image-none {
+			background-image: none;
+		}
+
+		.background-position-unset {
+			background-position: unset;
+		}
+
+		.background-repeat-no-repeat {
+			background-repeat: no-repeat;
+		}
+
+		.clear-both {
+			clear: both;
+		}
+
+		.clip-auto {
+			clip: auto;
+		}
+
+		.filter-blur0px-contrast-100-greyscale-0-hue-rotate-0deg-invert-0-brightness-1-opacity-100-saturate-100-sepia-0 {
+			filter: blur(0px) contrast(100%) grayscale(0%) hue-rotate(0deg) invert(0%) brightness(100%) opacity(100%) saturate(100%) sepia(0%);
+		}
+
+		.float-none {
+			float: none;
+		}
+
+		.visibility-visible {
+			visibility: visible;
+		}
+	</style>
+</head>
+
+<body
+	data-class="filter-blur0px-contrast-100-greyscale-0-hue-rotate-0deg-invert-0-brightness-1-opacity-100-saturate-100-sepia-0 display-block 
+unicode-bidi-isolate margin-8px font-apple-system-BlinkMacSystemFont-Segoe-UI-Roboto-Oxygen-Ubuntu-Cantarell-Open-Sans-Helvetica-Neue-sans-serif"
+	class="filter-blur0px-contrast-100-greyscale-0-hue-rotate-0deg-invert-0-brightness-1-opacity-100-saturate-100-sepia-0 display-block 
+	unicode-bidi-isolate margin-8px font-apple-system-BlinkMacSystemFont-Segoe-UI-Roboto-Oxygen-Ubuntu-Cantarell-Open-Sans-Helvetica-Neue-sans-serif">
+	<div data-class="filter-blur0px-contrast-100-greyscale-0-hue-rotate-0deg-invert-0-brightness-1-opacity-100-saturate-100-sepia-0 display-block
+	font-size-2em unicode-bidi-isolate font-weight-bold margin-block-end-67em margin-block-start-67em" class="filter-blur0px-contrast-100-greyscale-0-hue-rotate-0deg-invert-0-brightness-1-opacity-100-saturate-100-sepia-0 display-block
+		 font-size-2em unicode-bidi-isolate font-weight-bold margin-block-end-67em margin-block-start-67em">
+		Hello world</div>
+	<a data-class="filter-blur0px-contrast-100-greyscale-0-hue-rotate-0deg-invert-0-brightness-1-opacity-100-saturate-100-sepia-0 color-rgb-0-0-238
+	cursor-pointer text-decoration-underline unicode-bidi-isolate" href="javascript:void(0);" class="filter-blur0px-contrast-100-greyscale-0-hue-rotate-0deg-invert-0-brightness-1-opacity-100-saturate-100-sepia-0 color-rgb-0-0-238
+		 cursor-pointer text-decoration-underline unicode-bidi-isolate">Example
+		link</a>
+	<div data-class="visibility-visible float-none filter-blur0px-contrast-100-greyscale-0-hue-rotate-0deg-invert-0-brightness-1-opacity-100-saturate-100-sepia-0
+	clip-auto clear-both background-attachment-unset background-position-unset background-repeat-no-repeat background-image-none unicode-bidi-isolate 
+	   background-color-0b5ed7-hover border-color-0a58ca-hover word-spacing-initial letter-spacing-initial text-shadow-initial 
+	   white-space-unset text-indent-0 font-family-inherit margin-0 text-transform-none webkit-apperance-button 
+	   transition-color-15s-ease-in-out-background-color-15s-ease-in-out-border-color-15s-ease-in-out-box-shadow-15s-ease-in-out border-radius-25rem 
+	   font-size-1rem padding-375rem-75rem border-1px-solid border-color-0d6efd vertical-align-middle user-select-none cursor-pointer color-white 
+	   background-color-0d6efd display-inline-block font-weight-400 line-height-15 text-align-center text-decoration-none"
+		class="visibility-visible float-none filter-blur0px-contrast-100-greyscale-0-hue-rotate-0deg-invert-0-brightness-1-opacity-100-saturate-100-sepia-0
+	 clip-auto clear-both background-attachment-unset background-position-unset background-repeat-no-repeat background-image-none unicode-bidi-isolate 
+		background-color-0b5ed7-hover border-color-0a58ca-hover word-spacing-initial letter-spacing-initial text-shadow-initial 
+		white-space-unset text-indent-0 font-family-inherit margin-0 text-transform-none webkit-apperance-button 
+		transition-color-15s-ease-in-out-background-color-15s-ease-in-out-border-color-15s-ease-in-out-box-shadow-15s-ease-in-out border-radius-25rem 
+		font-size-1rem padding-375rem-75rem border-1px-solid border-color-0d6efd vertical-align-middle user-select-none cursor-pointer color-white 
+		background-color-0d6efd display-inline-block font-weight-400 line-height-15 text-align-center text-decoration-none">
+		Example button</div>
+
+	<script>
+		document.querySelectorAll("[data-class]").forEach(elems => {
+			let h = elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") +
+				elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") +
+				elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") +
+				elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") +
+				elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") +
+				elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") + elems.getAttribute("data-class") +
+				elems.getAttribute("data-class") + elems.getAttribute("data-class");
+			elems.setAttribute("class", h);
+		});
+	</script>
+</body>
+
+</html>

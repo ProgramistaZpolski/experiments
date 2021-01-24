@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Reactivity</title>
+	<meta name="description" content="An Experiment">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Reactivity">
+	<meta name="theme-color" content="#fafafa">
+	<meta name="author" content="Piotr Badełek">
+</head>
+
+<body>
+	<!--[if IE]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+	<![endif]-->
+	<button onclick="data['phones'] = 'największe zło';">Pokaż prawdę</button>
+
+	<h1>Telefony to <span data-bind="phones">zło</span></h1>
+
+	<script>
+		"use strict";
+
+		const state = {
+			"phones": "zło"
+		};
+
+		var data = new Proxy(state, {
+			set: function (key, value) {
+				let vkey = Object.values(key)[0];
+				console.log(key);
+				state[vkey] = value;
+				render();
+				return true;
+			}
+		});
+
+		function render() {
+			console.time("Speed");
+
+			document.querySelectorAll("[data-bind]").forEach(elem => {
+				elem.innerHTML = data[elem.dataset.bind];
+			});
+			console.timeEnd("Speed");
+		};
+
+		render();
+	</script>
+</body>
+
+</html>

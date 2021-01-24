@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Virtual DOM</title>
+</head>
+
+<body>
+	<button onclick="update();">Update the DOM</button>
+	<h1>hi</h1>
+	<h1>hi</h1>
+	<h1>hi</h1>
+	<h1>hi</h1>
+	<h1>hi</h1>
+	<h1>hi</h1>
+	<h1>hi</h1>
+	<h1>hi</h1>
+	<script>
+		"use strict";
+
+		let dom = [];
+
+		document.querySelectorAll("body *").forEach(elem => {
+			let el = {};
+			for (const h in elem) {
+				el[h] = elem[h];
+			};
+			el.prototype = elem.prototype;
+			dom.push(el);
+		});
+
+		function render() {
+			document.body.innerHTML = "";
+			dom.forEach(elem => {
+				let hh = document.createElement(elem.tagName);
+				for (const key in elem) {
+					try {
+						hh[key] = elem[key];
+					} catch (error) {
+						//console.log(error);
+					}
+				};
+				document.body.append(hh);
+			});
+		};
+
+		console.time("Speed");
+		render();
+		console.timeEnd("Speed");
+
+		function update() {
+			console.time("Speed");
+			document.querySelectorAll("h1").forEach(elem => {
+				elem.innerText = "hello";
+			});
+
+			dom = [];
+			document.querySelectorAll("body *").forEach(elem => {
+				let el = {};
+				for (const h in elem) {
+					el[h] = elem[h];
+				};
+				el.prototype = elem.prototype;
+				dom.push(el);
+			});
+
+			render();
+			console.timeEnd("Speed");
+		};
+	</script>
+</body>
+
+</html>
