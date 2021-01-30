@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>why code editor</title>
+	<style>
+		pre {
+			font-size: 1.25rem;
+			line-height: 2;
+			word-wrap: break-word;
+			white-space: break-spaces;
+		}
+	</style>
+</head>
+
+<body>
+	<pre></pre>
+	<script>
+		"use strict";
+		function getRandomColor() {
+			let letters = '0123456789ABCDEF';
+			let color = '#';
+			for (let i = 0; i < 6; i++) {
+				color += letters[Math.floor(Math.random() * 16)];
+			};
+			return color;
+		};
+
+		function what(deeeta) {
+			console.time("what");
+			[...deeeta].forEach(elem => {
+				document.querySelector("pre").innerHTML += `<span style="color: ${getRandomColor()}">${elem}</span>`;
+			});
+			console.timeEnd("what");
+		};
+		fetch("https://cdn.jsdelivr.net/gh/cferdinandi/bin/dist/bin.min.js")
+			.then(resp => resp.text())
+			.then(data => what(data));
+	</script>
+</body>
+
+</html>
