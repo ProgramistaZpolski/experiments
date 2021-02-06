@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>isSome</title>
+</head>
+<body>
+	<h1>Awesome Arrays</h1>
+	<span>Waiting for javascript to run</span>
+
+	<script>
+		"use strict";
+
+		const data = [
+			{ "name": "h", "kasztan": false },
+			{ "name": "content", "kasztan": false },
+			{ "name": "chicken", "kasztan": false },
+			{ "name": "flash", "kasztan": false },
+			{ "name": "kukanq", "kasztan": true }
+		];
+
+		document.querySelector("span").innerText = `${data.some(person => person.kasztan)}`;
+	</script>
+</body>
+</html>
